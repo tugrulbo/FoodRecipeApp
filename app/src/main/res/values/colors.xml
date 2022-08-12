@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="lightGray">#F9F9F9</color>
+    <color name="mediumGray">#D1D1D1</color>
+    <color name="lightMediumGray">#80D1D1D1</color>
+    <color name="darkGray">#4B4B4B</color>
+    <color name="dark">#313C44</color>
+    <color name="darker">#151B20</color>
+    <color name="red">#FF4646</color>
+    <color name="yellow">#FFC114</color>
+    <color name="green">#00C980</color>
+
+    // Custom Chip Style
+    <color name="checkedChipBackgroundColor">#206200EA</color>
+    <color name="chipBackgroundColor">@color/lightGray</color>
+    <color name="checkedChipTextColor">@color/purple_500</color>
+    <color name="chipTextColor">@color/darkGray</color>
 </resources>

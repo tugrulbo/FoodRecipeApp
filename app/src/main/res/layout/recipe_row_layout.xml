@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/row_cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/lightMediumGray"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivRecipeImage"
+                android:layout_width="200dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvRecipeTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Lorem Ipsum"
+                android:textColor="@color/darker"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ivRecipeImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRecipeDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                android:textColor="@color/darkGray"
+                app:layout_constraintEnd_toEndOf="@+id/tvRecipeTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvRecipeTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecipeTitle" />
+
+            <ImageView
+                android:id="@+id/ivHeart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvHeartText"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tvHeartText"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecipeDesc"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_heart"
+                app:tint="@color/red" />
+
+            <TextView
+                android:id="@+id/tvHeartText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:textColor="@color/red"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="@+id/tvRecipeDesc"
+                app:layout_constraintTop_toBottomOf="@+id/ivHeart" />
+
+            <ImageView
+                android:id="@+id/ivClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="@color/yellow"
+                app:layout_constraintEnd_toEndOf="@+id/tvClockText"
+                app:layout_constraintStart_toStartOf="@+id/tvClockText"
+                app:layout_constraintTop_toTopOf="@+id/ivHeart"
+                app:srcCompat="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/tvClockText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="100"
+                android:textColor="@color/yellow"
+                android:textAlignment="center"
+                app:layout_constraintStart_toEndOf="@+id/tvHeartText"
+                app:layout_constraintTop_toBottomOf="@+id/ivClock" />
+
+            <ImageView
+                android:id="@+id/ivLeaf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tvLeafText"
+                app:layout_constraintStart_toStartOf="@+id/tvLeafText"
+                app:layout_constraintTop_toTopOf="@+id/ivClock"
+                app:srcCompat="@drawable/ic_spa" />
+
+            <TextView
+                android:id="@+id/tvLeafText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="100"
+                android:textAlignment="center"
+                app:layout_constraintStart_toEndOf="@+id/tvClockText"
+                app:layout_constraintTop_toBottomOf="@+id/ivLeaf" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
