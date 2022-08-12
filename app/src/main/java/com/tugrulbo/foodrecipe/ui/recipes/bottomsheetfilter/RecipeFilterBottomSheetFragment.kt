@@ -84,7 +84,7 @@ class RecipeFilterBottomSheetFragment : BottomSheetDialogFragment() {
             try {
                 chipGroup.findViewById<Chip>(chipId).isChecked = true
             }catch (e:Exception){
-                Log.d("RecipesBottomSheet", "updateChip: ${e.localizedMessage.toString()} ")
+                Log.d("RecipesBottomSheet", "updateChip: ${e.localizedMessage} ")
             }
         }
     }
