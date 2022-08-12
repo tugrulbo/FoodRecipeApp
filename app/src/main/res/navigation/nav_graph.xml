@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_recipeFragment_to_recipeFilterBottomSheetFragment"
             app:destination="@id/recipeFilterBottomSheetFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteRecipeFragment"
@@ -33,4 +36,13 @@
             android:id="@+id/action_recipeFilterBottomSheetFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
     </dialog>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.tugrulbo.foodrecipe.ui.recipedetail.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" >
+        <argument
+            android:name="result"
+            app:argType="com.tugrulbo.foodrecipe.data.model.Result" />
+    </fragment>
 </navigation>

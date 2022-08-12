@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,6 +19,7 @@ import com.tugrulbo.foodrecipe.ui.recipes.adapter.RecipeAdapter
 import com.tugrulbo.foodrecipe.utils.ConnectivityObserver
 import com.tugrulbo.foodrecipe.utils.NetworkResult
 import com.tugrulbo.foodrecipe.utils.observeOnce
+import com.tugrulbo.foodrecipe.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -59,16 +59,19 @@ class RecipeFragment : Fragment() {
                 if(status == ConnectivityObserver.Status.Available){
                     findNavController().navigate(R.id.action_recipeFragment_to_recipeFilterBottomSheetFragment)
                 }else{
-                    Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_SHORT).show()
+                    requireContext().toast("No internet connection")
                 }
             })
 
         }
+
     }
 
     private fun setupRecipeRecyclerView(){
         mAdapter = RecipeAdapter{
-            Toast.makeText(requireContext(), "${it.title}", Toast.LENGTH_SHORT).show()
+            val action = RecipeFragmentDirections.actionRecipeFragmentToRecipeDetailFragment(it)
+            findNavController().navigate(action)
+
         }
         binding.recyclerview.adapter = mAdapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
@@ -102,7 +105,7 @@ class RecipeFragment : Fragment() {
                 is NetworkResult.Error -> {
                     hideShimmerEffect()
                     loadDataFromCache()
-                    Toast.makeText(requireContext(), response.message.toString(), Toast.LENGTH_SHORT).show()
+                    requireContext().toast(response.message.toString())
                 }
                 is NetworkResult.Loading->
                     showShimmerEffect()
@@ -145,7 +148,7 @@ class RecipeFragment : Fragment() {
                 is NetworkResult.Error -> {
                     hideShimmerEffect()
                     loadDataFromCache()
-                    Toast.makeText(requireContext(), response.message.toString(), Toast.LENGTH_SHORT).show()
+                    requireContext().toast(response.message.toString())
                 }
                 is NetworkResult.Loading->
                     showShimmerEffect()

@@ -14,8 +14,6 @@ import com.tugrulbo.foodrecipe.R
 import com.tugrulbo.foodrecipe.data.model.FoodRecipe
 import com.tugrulbo.foodrecipe.data.model.Result
 import com.tugrulbo.foodrecipe.utils.RecipesDiffUtil
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Inject
 
 class RecipeAdapter(
     private var onItemClicked: ((result: Result) -> Unit)
