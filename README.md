@@ -1,14 +1,16 @@
 ### FoodRecipeApp
 
-- Simple ToDo app.
-- Getting datas from room, inserting todos, searching todos, updating todos
+- Simple Recipe app.
+- Datas getting from API then saving to db. Data reading from db and showing data. If db is empty, sending request to API.
 
 # Contents
 - MVVM
+- Hilt
 - Room
 - Recyclerview with diffUtil
-- Simple recyclerview anim.
 - Navigation
+- Shimmer Efect
+
 
 ## Screenshots and Video
 <div>
