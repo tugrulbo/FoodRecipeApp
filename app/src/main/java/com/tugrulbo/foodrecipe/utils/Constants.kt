@@ -3,7 +3,7 @@ package com.tugrulbo.foodrecipe.utils
 object Constants {
 
     const val BASE_URL = "https://api.spoonacular.com"
-    const val BASE_IMAGE_URL = "https://api.spoonacular.com/cdn/ingredients_100x100/"
+    const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
     const val API_KEY = "74b2fb7bbda941219cfb0af0b65a1219"
 
     //API Query Keys
