@@ -14,6 +14,7 @@ import com.tugrulbo.foodrecipe.R
 import com.tugrulbo.foodrecipe.data.local.entities.FavoritesEntity
 import com.tugrulbo.foodrecipe.data.model.Result
 import com.tugrulbo.foodrecipe.utils.RecipesDiffUtil
+import org.jsoup.Jsoup
 
 class FavoriteRecipesAdapter(
     private var onItemClicked: ((result: Result) -> Unit)
@@ -36,7 +37,10 @@ class FavoriteRecipesAdapter(
                 crossfade(600)
             }
             tvRecipeTitle.text = data.result.title
-            tvRecipeDes.text = data.result.summary
+            data.result.summary.let { value->
+                val summary = Jsoup.parse(value).text()
+                tvRecipeDes.text = summary
+            }
             tvNumberOfLikes.text = data.result.aggregateLikes.toString()
             tvNumberOfTimes.text = data.result.readyInMinutes.toString()
             if(data.result.vegan){

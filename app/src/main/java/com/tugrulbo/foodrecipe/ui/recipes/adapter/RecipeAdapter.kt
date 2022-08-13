@@ -14,6 +14,7 @@ import com.tugrulbo.foodrecipe.R
 import com.tugrulbo.foodrecipe.data.model.FoodRecipe
 import com.tugrulbo.foodrecipe.data.model.Result
 import com.tugrulbo.foodrecipe.utils.RecipesDiffUtil
+import org.jsoup.Jsoup
 
 class RecipeAdapter(
     private var onItemClicked: ((result: Result) -> Unit)
@@ -36,7 +37,11 @@ class RecipeAdapter(
                 crossfade(600)
             }
             tvRecipeTitle.text = result.title
-            tvRecipeDes.text = result.summary
+            result.summary.let { value->
+                val summary = Jsoup.parse(value).text()
+                tvRecipeDes.text = summary
+            }
+
             tvNumberOfLikes.text = result.aggregateLikes.toString()
             tvNumberOfTimes.text = result.readyInMinutes.toString()
             if(result.vegan){
