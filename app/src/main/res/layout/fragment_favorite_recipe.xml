@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.favoriterecipe.FavoriteRecipeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/rvFavorites"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Favorite" />
+        android:layout_marginHorizontal="8dp"
+        />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/ivNoData"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_remove"
+        android:alpha="0.5"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvNoData"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="No Favorite Recipes"
+        android:visibility="gone"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ivNoData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

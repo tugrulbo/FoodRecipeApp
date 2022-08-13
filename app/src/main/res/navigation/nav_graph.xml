@@ -27,7 +27,11 @@
         android:id="@+id/favoriteRecipeFragment"
         android:name="com.tugrulbo.foodrecipe.ui.favoriterecipe.FavoriteRecipeFragment"
         android:label="fragment_favorite_recipe"
-        tools:layout="@layout/fragment_favorite_recipe" />
+        tools:layout="@layout/fragment_favorite_recipe" >
+        <action
+            android:id="@+id/action_favoriteRecipeFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
     <dialog
         android:id="@+id/recipeFilterBottomSheetFragment"
         android:name="com.tugrulbo.foodrecipe.ui.recipes.bottomsheetfilter.RecipeFilterBottomSheetFragment"

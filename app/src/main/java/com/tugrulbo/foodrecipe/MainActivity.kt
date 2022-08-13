@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
+        setTheme(R.style.AppTheme)
         setContentView(view)
         setupNav()
 
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.recipeFragment -> showBottomNav()
                 R.id.recipeDetailFragment -> hideBottomNav()
+                R.id.favoriteRecipeFragment -> showBottomNav()
                 else -> hideBottomNav()
             }
         }
