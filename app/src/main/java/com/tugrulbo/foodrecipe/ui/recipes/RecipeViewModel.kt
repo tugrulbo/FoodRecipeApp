@@ -8,9 +8,8 @@ import android.util.Log
 import androidx.lifecycle.*
 import com.tugrulbo.foodrecipe.data.DataStoreRepository
 import com.tugrulbo.foodrecipe.data.Repository
-import com.tugrulbo.foodrecipe.data.local.RecipesEntity
+import com.tugrulbo.foodrecipe.data.local.entities.RecipesEntity
 import com.tugrulbo.foodrecipe.data.model.FoodRecipe
-import com.tugrulbo.foodrecipe.data.model.Result
 import com.tugrulbo.foodrecipe.utils.ConnectivityObserver
 import com.tugrulbo.foodrecipe.utils.Constants.API_KEY
 import com.tugrulbo.foodrecipe.utils.Constants.DEFAULT_DIET_TYPE
@@ -26,7 +25,6 @@ import com.tugrulbo.foodrecipe.utils.Constants.QUERY_TYPE
 import com.tugrulbo.foodrecipe.utils.NetworkConnectivityObserver
 import com.tugrulbo.foodrecipe.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
