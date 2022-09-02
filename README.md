@@ -4,7 +4,6 @@
 - Datas getting from API then saving to db. Data reading from db and showing data. If db is empty, sending request to API.
 
 # Contents
-- MVVM
 - Hilt
 - Room
 - Recyclerview with diffUtil
